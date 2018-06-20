@@ -26,7 +26,7 @@ function createXmlHttpRequest() {
 */
 function ajax(option) {
   //1. 得到xmlHttp
-  var xmlHttp = createXMLHttpRequest();
+  var xmlHttp = createXmlHttpRequest();
   //2. 打开连接
   if (!option.method) {
     //默认为GET请求
