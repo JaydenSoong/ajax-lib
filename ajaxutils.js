@@ -1,3 +1,4 @@
+﻿
 function createXmlHttpRequest() {
   try {
     return new XMLHttpRequest(); // 大多数浏览器
@@ -31,13 +32,13 @@ function ajax(option) {
     //默认为GET请求
     option.method = "GET";
   }
-  if (option.asyn == undefined) {
+  if (option.asyn === undefined) {
     //默认为异步处理
     option.asyn = true;
   }
   xmlHttp.open(option.method, option.url, option.asyn);
   //3. 判断是否为POST
-  if ("POST" == option.method) {
+  if ("POST" === option.method) {
     xmlHttp.setRequestHeader(
       "Content-Type",
       "application/x-www-form-urlencoded"
@@ -54,11 +55,11 @@ function ajax(option) {
       if (!option.type) {
         //如果type没有赋值，那么默认为文本
         data = xmlHttp.responseText;
-      } else if (option.type == "xml") {
+      } else if (option.type === "xml") {
         data = xmlHttp.responseXML;
-      } else if (option.type == "text") {
+      } else if (option.type === "text") {
         data = xmlHttp.responseText;
-      } else if (option.type == "json") {
+      } else if (option.type === "json") {
         var text = xmlHttp.responseText;
         data = eval("(" + text + ")");
       }
