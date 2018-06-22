@@ -4,10 +4,10 @@ function createXmlHttpRequest() {
     return new XMLHttpRequest(); // 大多数浏览器
   } catch (e) {
     try {
-      return ActiveXObject("Msxml2.XMLHTTP"); // ie 6
+      return new ActiveXObject("Msxml2.XMLHTTP"); // ie 6
     } catch (e) {
       try {
-        return ActiveXObject("Microsoft.XMLHTTP"); // ie 5.5 及更早版本
+        return new ActiveXObject("Microsoft.XMLHTTP"); // ie 5.5 及更早版本
       } catch (e) {
         throw e;
       }
